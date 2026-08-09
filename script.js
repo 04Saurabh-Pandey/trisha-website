@@ -202,6 +202,6 @@
   }
 
   // small config fallback
-  window.config = window.config || {PIN:2814};
+  window.config = window.config || {PIN:10};
 
 })();
