@@ -23,7 +23,7 @@
     const digits = [1,2,3,4,5,6,7,8,9,'',0,'←'];
     keypad.innerHTML='';
     let entered = '';
-    const pinStr = String(config && config.PIN ? config.PIN : '28');
+    const pinStr = String(config && config.PIN ? config.PIN : '10');
     const targetDate = parseBirthday(config && config.BIRTHDAY ? config.BIRTHDAY : '2026-08-28');
     const birthdayReached = isBirthdayReached(targetDate);
 
