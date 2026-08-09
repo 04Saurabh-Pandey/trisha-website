@@ -1,0 +1,105 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Magic Dashboard — Trishu</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body class="home-page">
+  <div class="home-bg-layer"></div>
+  <div class="bg-anim"></div>
+  <header class="topbar">
+    <div class="hero-bubble">💖</div>
+    <h1 class="welcome-anim">Welcome My Little Sister 🌸</h1>
+    <p class="subtitle">A little corner full of smiles, love, and sweet surprises for you</p>
+  </header>
+
+  <main class="dashboard">
+    <section class="story-section">
+      <div class="section-heading">
+        <span>✨ Your happy place</span>
+        <h2>Some magical moments just for you</h2>
+      </div>
+
+      <div class="cards">
+        <a class="card big-card glass" href="birthday.html">
+          <img src="assets/images/birthday.svg" alt="birthday" class="card-art">
+          <div class="card-copy">
+            <h3>🎂 Birthday Magic</h3>
+            <p>A dreamy celebration with sparkle and love.</p>
+          </div>
+        </a>
+
+        <a class="card big-card glass" href="rakhi.html">
+          <img src="assets/images/rakhi.svg" alt="rakhi" class="card-art">
+          <div class="card-copy">
+            <h3>🎀 Rakhi Wishes</h3>
+            <p>A beautiful little tribute wrapped in affection.</p>
+          </div>
+        </a>
+
+        <a class="card big-card glass" href="photobooth.html">
+          <img src="assets/images/camera.svg" alt="photobooth" class="card-art">
+          <div class="card-copy">
+            <h3>📸 Photo Booth</h3>
+            <p>Capture cute memories and smiley moments.</p>
+          </div>
+        </a>
+
+        <a class="card big-card glass" href="pet.html">
+          <img src="assets/images/pet.svg" alt="pet" class="card-art">
+          <div class="card-copy">
+            <h3>🧸 Virtual Pet</h3>
+            <p>Spend a little time with a tiny cozy companion.</p>
+          </div>
+        </a>
+      </div>
+    </section>
+
+    <section class="mini-section glass">
+      <h3>🌷 A tiny note for you</h3>
+      <p>You are loved, admired, and always special. This little space was made with a big smile just for you.</p>
+    </section>
+
+    <section class="watch-card glass">
+      <div class="watch-header">
+        <div>
+          <h3>📺 Watch</h3>
+          <p>Upload a photo or video here and it will appear in its real size without overflowing.</p>
+        </div>
+        <label class="btn primary watch-btn">
+          <input type="file" id="watch-input" accept="image/*,video/*">
+          Add Media
+        </label>
+      </div>
+      <div id="watch-preview" class="watch-preview">
+        <p class="subtitle">Choose a photo or video to preview it here.</p>
+      </div>
+    </section>
+
+    <section class="poster-card glass home-poster-card">
+      <h3>🎀 Special Poster</h3>
+      <div class="poster-frame">
+        <img src="poster.png" alt="Special poster" class="poster-image">
+      </div>
+    </section>
+  </main>
+
+  <div id="ai-companion" class="ai-companion">
+    <img src="assets/images/teddy-small.png" alt="ai" class="ai-pet">
+    <button id="ai-open" class="ai-btn">♥</button>
+    <div id="ai-chat" class="ai-chat hidden">
+      <div class="ai-header">Hey Trishu!! 💖</div>
+      <div class="ai-body" id="ai-body">I hope you smile today 🌸</div>
+      <div class="ai-input">
+        <input id="ai-in" placeholder="Ask me something cute...">
+        <button id="ai-send">Send</button>
+      </div>
+    </div>
+  </div>
+
+  <script src="config.js"></script>
+  <script src="script.js"></script>
+</body>
+</html>

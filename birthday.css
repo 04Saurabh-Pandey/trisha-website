@@ -1,0 +1,47 @@
+@import url('style.css');
+.birthday-page{position:relative;min-height:100vh;padding-bottom:3rem;overflow-x:hidden}
+.birthday-poster{position:fixed;inset:0;z-index:-2;width:100%;height:100%;object-fit:cover;display:block;pointer-events:none;opacity:1}
+.poster-card{padding:1rem 1.1rem}
+.poster-card h2{margin:.2rem 0 .7rem;font-size:1.12rem;color:#7a2f4f}
+.poster-frame{width:100%;border-radius:20px;overflow:hidden;background:rgba(255,255,255,0.7);padding:0.4rem;box-shadow:0 12px 30px rgba(255,105,180,0.14)}
+.poster-image{display:block;width:100%;height:auto;max-height:min(70vh,520px);object-fit:cover;border-radius:16px}
+.confetti-layer{position:fixed;inset:0;pointer-events:none;z-index:0;overflow:hidden}
+.confetti-layer span{position:absolute;top:-10vh;width:10px;height:18px;border-radius:2px;opacity:0.9;animation:fall 5s linear infinite}
+.birthday-page .hero{position:relative;z-index:1;padding:2rem 1rem 1rem;text-align:center}
+.hero-bubble{width:74px;height:74px;border-radius:50%;display:grid;place-items:center;font-size:2rem;margin:0 auto 1rem;background:linear-gradient(135deg,#fff7fb,#ffd8e8);box-shadow:0 14px 30px rgba(255,105,180,0.2)}
+.hero h1{margin:.2rem 0 .3rem;font-size:clamp(1.7rem,4vw,2.6rem);color:#7a2f4f;text-shadow:0 2px 8px rgba(255,255,255,0.6)}
+.hero-sub{margin:0 auto;max-width:680px;color:#6f3650;line-height:1.6;font-weight:700;text-shadow:0 1px 4px rgba(255,255,255,0.45)}
+.birthday-hub{position:relative;z-index:1;max-width:980px;margin:0 auto;padding:0 1rem 2rem;display:grid;gap:1rem}
+.hero-banner{display:flex;align-items:center;justify-content:center;gap:1.2rem;padding:1.1rem;flex-wrap:wrap}
+.cake-stage{position:relative;width:min(250px,100%);height:220px;display:grid;place-items:center}
+.cake-stand{width:160px;height:24px;border-radius:999px;background:#f2a4c7;box-shadow:0 8px 20px rgba(255,105,180,0.12)}
+.cake{position:relative;top:6px;animation:floatCake 2.4s ease-in-out infinite}
+.cake-body{width:140px;height:90px;border-radius:24px 24px 18px 18px;background:linear-gradient(135deg,#ff7fb5,#ffb6d5);box-shadow:0 12px 25px rgba(255,105,180,0.16)}
+.cake-top{position:absolute;top:-28px;left:18px;width:104px;height:48px;border-radius:20px;background:linear-gradient(135deg,#fff,#ffd7e8);box-shadow:0 8px 18px rgba(255,105,180,0.16)}
+.candle{position:absolute;top:-12px;left:36px;width:8px;height:48px;border-radius:999px;background:#fff;box-shadow:0 0 0 2px rgba(255,105,180,0.1)}
+.candle-two{left:66px;height:56px}
+.candle-three{left:96px;height:44px}
+.flame{position:absolute;top:-24px;left:50px;width:14px;height:24px;border-radius:50% 50% 45% 45%;background:linear-gradient(180deg,#ffe08a,#ff7a00);animation:flame 0.8s ease-in-out infinite alternate}
+.countdown-card{padding:1rem 1.1rem;min-width:min(280px,100%)}
+.countdown-label{font-size:.9rem;font-weight:700;color:#a33963;margin-bottom:.35rem}
+.countdown{font-size:1.15rem;font-weight:800;color:#5f2a45;line-height:1.5}
+.wish-card,.photo-card{padding:1rem 1.1rem}
+.wish-card h2,.photo-card h2{margin:.2rem 0 .4rem;font-size:1.12rem;color:#7a2f4f}
+.wish-card p,.photo-card p{margin:0;line-height:1.6;color:#5f2a45;font-weight:600}
+.wish-card--soft{background:linear-gradient(135deg,rgba(255,255,255,0.62),rgba(255,248,252,0.42))}
+.photo-card-header{display:flex;justify-content:space-between;align-items:center;gap:.8rem;flex-wrap:wrap;margin-bottom:.8rem}
+.upload-btn{display:inline-flex;align-items:center;justify-content:center;padding:.6rem .9rem;border-radius:999px;background:linear-gradient(90deg,var(--accent),#ffc0dd);color:white;font-weight:700;cursor:pointer;box-shadow:0 10px 24px rgba(255,105,180,0.18)}
+.upload-btn input{display:none}
+.gallery{display:grid;grid-template-columns:repeat(auto-fit,minmax(140px,1fr));gap:10px}
+.gallery img{width:100%;height:130px;object-fit:cover;border-radius:16px;box-shadow:0 10px 24px rgba(0,0,0,0.08);border:3px solid rgba(255,255,255,0.75)}
+.gallery .empty-state{padding:1rem;border:1px dashed rgba(255,105,180,0.35);border-radius:16px;text-align:center;color:#9a5874;background:rgba(255,255,255,0.45)}
+@keyframes fall{0%{transform:translate3d(0,-15vh,0) rotate(0deg);opacity:0}10%{opacity:1}100%{transform:translate3d(var(--x,0),110vh,0) rotate(360deg);opacity:0}}
+@keyframes floatCake{0%,100%{transform:translateY(0)}50%{transform:translateY(-8px)}}
+@keyframes flame{0%{transform:scale(1)}100%{transform:scale(1.1)}}
+@media(max-width:720px){
+  .hero-banner{padding:1rem}
+  .countdown-card{width:100%}
+  .gallery{grid-template-columns:1fr 1fr}
+  .gallery img{height:112px}
+  .poster-image{max-height:min(60vh,420px)}
+}

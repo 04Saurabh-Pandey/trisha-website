@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover" />
+    <meta name="theme-color" content="#ffd6e8">
+    <title>Welcome Trishu 💖</title>
+    <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+    <div id="loading" class="loading-screen">
+        <div class="loader-card">
+            <img src="assets/images/teddy.gif" alt="teddy" class="loader-gif">
+            <h1>Loading magic for Trishu...</h1>
+            <div class="progress"><span></span></div>
+            <p class="cute-quote">"A little sparkle for a big smile ✨"</p>
+        </div>
+    </div>
+
+    <main id="lock-screen" class="center-page">
+        <div class="lock-bg-layer" aria-hidden="true"></div>
+        <div class="bg-anim"></div>
+        <div class="card lock-card glass">
+            <div class="lock-badge" aria-hidden="true">🔐</div>
+            <div id="lock-content" class="lock-content">
+                <h1>Welcome Trishu 💖</h1>
+                <p class="sub">My Sweet Little Sister</p>
+
+                <div id="pin-display" class="pin-display"></div>
+
+                <div class="keypad" id="keypad"></div>
+
+                <div class="lock-poster-wrap">
+                    <img src="bgbig.jpg" alt="Birthday poster" class="lock-poster-img">
+                </div>
+
+                <p id="pin-msg" class="pin-msg">Enter PIN to unlock</p>
+            </div>
+
+            <div id="countdown-view" class="countdown-view hidden" aria-live="polite">
+                <div class="countdown-badge">🎉</div>
+                <h2>Birthday countdown</h2>
+                <div id="unlock-countdown" class="unlock-countdown"></div>
+                <p class="countdown-note">The full website opens on your birthday.</p>
+            </div>
+        </div>
+    </main>
+
+    <audio id="snd-key" src="assets/sounds/key.mp3" preload="auto"></audio>
+    <audio id="snd-error" src="assets/sounds/error.mp3" preload="auto"></audio>
+    <audio id="snd-success" src="assets/sounds/success.mp3" preload="auto"></audio>
+
+    <script src="config.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>

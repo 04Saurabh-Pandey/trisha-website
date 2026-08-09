@@ -1,0 +1,55 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Virtual Pet — Trishu</title>
+  <link rel="stylesheet" href="style.css">
+  <style>
+    body{background:linear-gradient(135deg,#ffeef7 0%,#fce7ff 45%,#fff4d8 100%)}
+    .pet-area{display:flex;flex-direction:column;align-items:center;padding:1rem}
+    .pet-card{width:min(420px,100%);height:auto;background:linear-gradient(135deg,rgba(255,255,255,0.82),rgba(255,248,252,0.6));border-radius:24px;display:flex;flex-direction:column;align-items:center;justify-content:center;box-shadow:0 22px 48px rgba(131,54,84,0.16);padding:1rem 1rem 1.2rem}
+    .pet-img{width:190px;height:190px;border-radius:50%;background:linear-gradient(180deg,#fff,#ffdff0);display:flex;align-items:center;justify-content:center;font-size:60px;overflow:hidden;box-shadow:0 14px 32px rgba(255,105,180,0.16)}
+    .pet-img img{width:100%;height:100%;object-fit:cover;border-radius:50%;display:block}
+    .stats{display:flex;gap:8px;margin-top:12px;flex-wrap:wrap;justify-content:center}
+    .stat{background:rgba(255,255,255,0.82);padding:.5rem .8rem;border-radius:999px;font-weight:700;color:#7a3554}
+    .pet-actions{display:flex;gap:8px;margin-top:14px;flex-wrap:wrap;justify-content:center}
+    .pet-actions .btn{min-width:92px}
+    .pet-talk{margin-top:12px;padding:.85rem 1rem;border-radius:16px;background:rgba(255,255,255,0.86);color:#8b5670;max-width:340px;text-align:center;box-shadow:0 10px 22px rgba(255,105,180,0.12)}
+    .pet-input{display:flex;gap:8px;margin-top:10px;width:min(340px,100%)}
+    .pet-input input{flex:1;border:none;border-radius:999px;padding:.7rem .9rem;outline:none;box-shadow:inset 0 0 0 1px rgba(255,105,180,0.18)}
+    .pet-input button{border:none}
+    .sparkle{position:absolute;pointer-events:none;font-size:1rem;animation:pop 700ms ease-out forwards}
+    @keyframes pop{0%{opacity:0;transform:translateY(0) scale(.6)}50%{opacity:1;transform:translateY(-18px) scale(1)}100%{opacity:0;transform:translateY(-36px) scale(.8)}}
+  </style>
+</head>
+<body>
+  <header class="topbar"><h1>Virtual Pet 🧸</h1><p class="subtitle">Talk to your pet, feed it, pet it, and play with it like a tiny real companion</p></header>
+  <main class="pet-area">
+    <div class="pet-card glass">
+      <div id="petImage" class="pet-img" style="position:relative">
+        <img id="petAvatar" src="assets/images/teddy.gif" alt="pet avatar">
+      </div>
+      <div class="stats">
+        <div class="stat">❤️ <span id="happiness">80</span></div>
+        <div class="stat">🍰 <span id="hunger">60</span></div>
+        <div class="stat">⭐ <span id="love">50</span></div>
+      </div>
+      <div class="pet-actions">
+        <button id="btnFeed" class="btn">Feed</button>
+        <button id="btnPet" class="btn">Pet</button>
+        <button id="btnPlay" class="btn primary">Play</button>
+        <button id="btnSpeak" class="btn">Talk</button>
+        <button id="btnMic" class="btn">🎤 Mic</button>
+      </div>
+      <div class="pet-talk" id="petTalk">Hi Trishu! I’m your cute little buddy. Tell me something and I’ll repeat it with a smile 💖</div>
+      <div class="pet-input">
+        <input id="petInput" placeholder="Say something to your pet..." />
+        <button id="btnSend" class="btn primary">Send</button>
+      </div>
+    </div>
+  </main>
+
+  <script src="pet.js"></script>
+</body>
+</html>

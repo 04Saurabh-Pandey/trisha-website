@@ -1,0 +1,56 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Photo Booth — Trishu</title>
+  <link rel="stylesheet" href="style.css">
+  <style>
+    body{background:linear-gradient(135deg,#ffe8f3 0%,#fce6ff 45%,#fff8dc 100%)}
+    .topbar{padding-top:1.2rem}
+    .photobooth{display:flex;flex-direction:column;align-items:center;padding:1rem}
+    .pb-wrap{max-width:460px;width:100%}
+    .camera-wrap{position:relative;display:block;width:100%;border-radius:24px;overflow:hidden;box-shadow:0 16px 40px rgba(132,51,78,0.16);background:#fff;aspect-ratio:4/3}
+    video, canvas{width:100%;height:100%;object-fit:cover;display:block;border-radius:24px}
+    .controls{margin-top:12px;display:flex;gap:8px;flex-wrap:wrap;justify-content:center}
+    .frames{display:flex;gap:8px;margin-top:12px;flex-wrap:wrap;justify-content:center}
+    .frame{width:80px;height:60px;border:2px dashed rgba(255,255,255,0.3);border-radius:12px;display:flex;align-items:center;justify-content:center;cursor:pointer;background:rgba(255,255,255,0.6)}
+    .filters{display:flex;gap:8px;flex-wrap:wrap;justify-content:center;margin-top:10px}
+    .filter-btn.active{transform:translateY(-2px);box-shadow:0 12px 24px rgba(255,105,180,0.18)}
+    .status-pill{display:inline-block;margin-top:10px;padding:.45rem .7rem;border-radius:999px;background:rgba(255,255,255,0.8);color:#9a5874;font-size:.9rem;font-weight:700}
+  </style>
+</head>
+<body>
+  <header class="topbar"><h1>Photo Booth 📸</h1><p class="subtitle">A dreamy studio for cute selfies, sparkling filters, and playful stickers</p></header>
+  <main class="photobooth center-page">
+    <div class="pb-wrap">
+      <div class="camera-wrap">
+        <video id="cam" autoplay playsinline muted></video>
+        <canvas id="snap" style="display:none"></canvas>
+        <div id="flash" class="flash"></div>
+        <div id="sticker-layer" class="sticker-layer"></div>
+      </div>
+      <div class="status-pill" id="status-pill">Camera ready when you are ✨</div>
+
+      <div class="controls">
+        <button id="start" class="btn">Open Camera</button>
+        <button id="count" class="btn">3s Countdown</button>
+        <button id="take" class="btn primary">Take Photo</button>
+        <button id="download" class="btn">Download</button>
+      </div>
+
+      <div class="frames" id="frames"></div>
+      <div class="filters" id="filters">
+        <button data-filter="none" class="btn small filter-btn active">Normal</button>
+        <button data-filter="pink" class="btn small filter-btn">Pink Glow</button>
+        <button data-filter="vintage" class="btn small filter-btn">Vintage</button>
+        <button data-filter="dreamy" class="btn small filter-btn">Dreamy</button>
+        <button data-filter="cool" class="btn small filter-btn">Cool</button>
+        <button data-filter="sunset" class="btn small filter-btn">Sunset</button>
+      </div>
+    </div>
+  </main>
+
+  <script src="photobooth.js"></script>
+</body>
+</html>

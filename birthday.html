@@ -1,0 +1,75 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Birthday — Trishu</title>
+  <link rel="stylesheet" href="birthday.css">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body class="birthday-page">
+  <img src="bgbig.jpg" alt="Birthday poster" class="birthday-poster" aria-hidden="true">
+  <div class="confetti-layer" aria-hidden="true"></div>
+
+  <header class="hero">
+    <div class="hero-bubble">🎉</div>
+    <h1>Happy Birthday, Trishu! 🎂</h1>
+    <p class="hero-sub">A little celebration made with love just for my sweet sister 💖</p>
+  </header>
+
+  <section class="birthday-hub">
+    <div class="hero-banner glass">
+      <div class="cake-stage">
+        <div class="cake-stand"></div>
+        <div class="cake">
+          <div class="cake-top"></div>
+          <div class="cake-body"></div>
+          <div class="candle"></div>
+          <div class="candle candle-two"></div>
+          <div class="candle candle-three"></div>
+          <div class="flame"></div>
+        </div>
+      </div>
+      <div class="countdown-card">
+        <div class="countdown-label">Countdown to your special day</div>
+        <div class="countdown" id="birthday-countdown"></div>
+      </div>
+    </div>
+
+    <section class="wish-card glass">
+      <h2>💌 A little message for you</h2>
+      <p id="birthday-message"></p>
+    </section>
+
+    <section class="photo-card glass">
+      <div class="photo-card-header">
+        <div>
+          <h2>📸 Your happy memories</h2>
+          <p>Add your favorite photos and make this page glow with love.</p>
+        </div>
+        <label class="upload-btn">
+          <input type="file" id="photo-input" accept="image/*" multiple>
+          Add Photos
+        </label>
+      </div>
+      <div class="gallery" id="gallery"></div>
+    </section>
+
+    <section class="wish-card glass wish-card--soft">
+      <h2>✨ Wishes from your big brother</h2>
+      <p>May your year be full of laughter, beautiful dreams, and all the happiness you deserve. You are so special, Trishu, and I hope this birthday brings you endless smiles.</p>
+    </section>
+
+    <section class="poster-card glass">
+      <h2>🎀 Birthday Poster</h2>
+      <div class="poster-frame">
+        <img src="bgbig.jpg" alt="Birthday poster" class="poster-image">
+      </div>
+    </section>
+  </section>
+
+  <script src="config.js"></script>
+  <script src="birthday.js"></script>
+  <script src="script.js"></script>
+</body>
+</html>
