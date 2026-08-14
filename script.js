@@ -20,10 +20,10 @@
     const sndError = document.getElementById('snd-error');
     const sndSuccess = document.getElementById('snd-success');
     if(!keypad || !display) return;
-    const digits = [1,2,3,4,5,6,7,8,9,'',0,'←'];
+    const digits = [1,2,3,4,5,6,7,8,9,'*',0,'←'];
     keypad.innerHTML='';
     let entered = '';
-    const pinStr = String(config && config.PIN ? config.PIN : '10');
+    const pinStr = String(config && config.PIN ? config.PIN : '28');
     const targetDate = parseBirthday(config && config.BIRTHDAY ? config.BIRTHDAY : '2026-08-28');
     const birthdayReached = isBirthdayReached(targetDate);
 
@@ -203,5 +203,33 @@
 
   // small config fallback
   window.config = window.config || {PIN:10};
+
+  // Graceful fallback for optional images that may not exist yet (assets/*)
+  // so the site never shows a broken-image icon — swaps in a soft emoji tile instead.
+  document.addEventListener('DOMContentLoaded', ()=>{
+    const fallbackMap = [
+      { test:/birthday\.svg/i, emoji:'🎂' },
+      { test:/rakhi\.svg/i, emoji:'🎀' },
+      { test:/camera\.svg/i, emoji:'📸' },
+      { test:/pet\.svg/i, emoji:'🧸' },
+      { test:/teddy/i, emoji:'🧸' },
+    ];
+    document.querySelectorAll('img').forEach(img=>{
+      img.addEventListener('error', function onErr(){
+        img.removeEventListener('error', onErr);
+        const match = fallbackMap.find(f=>f.test.test(img.src));
+        const span = document.createElement('span');
+        span.textContent = match ? match.emoji : '💗';
+        span.style.display = 'flex';
+        span.style.alignItems = 'center';
+        span.style.justifyContent = 'center';
+        span.style.fontSize = Math.max(28, Math.min(img.width || 60, 60)) + 'px';
+        span.style.width = (img.width ? img.width+'px' : '100%');
+        span.style.height = (img.height ? img.height+'px' : '100%');
+        span.className = img.className;
+        img.replaceWith(span);
+      }, { once:true });
+    });
+  });
 
 })();

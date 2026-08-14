@@ -6,7 +6,18 @@ document.addEventListener('DOMContentLoaded',()=>{
   const sparkles = document.querySelector('.rakhi-sparkles');
 
   if(msg){
-    msg.textContent = `My dear ${name}, you are my little princess and my forever treasure. This Rakhi, I wish you all the love, strength, and happiness in the world.`;
+    const wish = `My dear ${name}, this rakhi is a small thread but it carries a promise as big as my love for you — to protect you, to cheer for you, and to always be the one phone call away. You are my little princess and my forever treasure. Wishing you a lifetime of love, strength, and happiness, today and always. 💗`;
+    typewrite(msg, wish, 22);
+  }
+
+  function typewrite(el, text, speed){
+    el.textContent = '';
+    let i = 0;
+    const iv = setInterval(()=>{
+      el.textContent += text.charAt(i);
+      i++;
+      if(i >= text.length) clearInterval(iv);
+    }, speed);
   }
 
   function createSparkles(){

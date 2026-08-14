@@ -6,7 +6,18 @@ document.addEventListener('DOMContentLoaded',()=>{
   const confettiLayer = document.querySelector('.confetti-layer');
 
   const name = (window.config && window.config.NAME) || 'Trishu';
-  if(msg){ msg.textContent = `My dearest ${name}, you bring sunshine, laughter, and a lot of love into every day. I hope your birthday is wrapped in joy, sweetness, and all the happiness you deserve.`; }
+  const wish = `My dearest ${name}, another year of you means another year of laughter echoing through the house, endless silly fights, and a bond nothing can ever break. Watching you grow has been one of my life's sweetest joys. May this birthday fill your heart with everything you dream of — bright mornings, warm hugs, and a year ahead as beautiful and special as you are. I love you more than words can say. Happy Birthday, my forever favourite person. 💖`;
+  if(msg){ typewrite(msg, wish, 22); }
+
+  function typewrite(el, text, speed){
+    el.textContent = '';
+    let i = 0;
+    const iv = setInterval(()=>{
+      el.textContent += text.charAt(i);
+      i++;
+      if(i >= text.length) clearInterval(iv);
+    }, speed);
+  }
 
   const target = new Date(window.config && window.config.BIRTHDAY ? window.config.BIRTHDAY : Date.now());
   function tick(){

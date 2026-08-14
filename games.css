@@ -1,0 +1,68 @@
+@import url('style.css');
+
+.games-page{position:relative;min-height:100vh;padding-bottom:3rem;overflow-x:hidden}
+.games-bg{position:fixed;inset:0;z-index:-2;background:linear-gradient(135deg,#fff3f8 0%,#fbe8ff 45%,#fff7e0 100%)}
+.games-page .hero{padding:1.6rem 1rem .6rem;text-align:center}
+
+.games-grid{max-width:1000px;margin:0 auto;padding:0 1rem 2rem;display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:1rem}
+.game-card{
+  cursor:pointer;text-align:center;padding:1.2rem 1rem;border-radius:26px;
+  background:linear-gradient(150deg,#fff,var(--clay-base));
+  box-shadow:14px 14px 28px var(--clay-lo), -10px -10px 22px var(--clay-hi);
+  transition:transform .18s ease, box-shadow .18s ease;
+  display:flex;flex-direction:column;align-items:center;gap:.5rem;
+}
+.game-card:hover{transform:translateY(-6px)}
+.game-card:active{transform:translateY(1px) scale(.97);box-shadow:inset 6px 6px 14px var(--clay-lo), inset -6px -6px 12px var(--clay-hi)}
+.game-card .icon{font-size:2.4rem}
+.game-card h3{margin:0;font-family:var(--font-display);font-size:1rem;color:#7a2f4f}
+.game-card p{margin:0;font-size:.82rem;color:#8b5670;line-height:1.35}
+
+.game-modal{position:fixed;inset:0;z-index:100;display:flex;align-items:center;justify-content:center;padding:1rem;background:rgba(122,47,79,0.35);backdrop-filter:blur(6px)}
+.game-modal.hidden{display:none}
+.game-modal-card{width:min(560px,96vw);max-height:92vh;overflow:auto;padding:1.2rem}
+.game-modal-head{display:flex;align-items:center;justify-content:space-between;gap:1rem;margin-bottom:.7rem}
+.game-modal-head h2{margin:0;font-size:1.15rem;color:#7a2f4f}
+.game-body{display:flex;flex-direction:column;align-items:center;gap:.8rem}
+.game-body canvas{max-width:100%;border-radius:18px;background:#fff0f6;box-shadow:inset 0 0 0 2px rgba(255,105,180,0.18);touch-action:none}
+.game-status{font-family:var(--font-display);font-weight:700;color:#a33963;text-align:center}
+.game-controls{display:flex;gap:.5rem;flex-wrap:wrap;justify-content:center}
+
+/* Tic Tac Toe */
+.ttt-board{display:grid;grid-template-columns:repeat(3,64px);grid-template-rows:repeat(3,64px);gap:8px}
+.ttt-cell{background:linear-gradient(150deg,#fff,var(--clay-base));border-radius:16px;display:flex;align-items:center;justify-content:center;font-size:1.8rem;font-weight:800;cursor:pointer;box-shadow:6px 6px 14px var(--clay-lo), -5px -5px 10px var(--clay-hi);color:var(--accent)}
+.ttt-cell:active{box-shadow:inset 4px 4px 8px var(--clay-lo), inset -4px -4px 8px var(--clay-hi)}
+
+/* Memory match */
+.mem-board{display:grid;grid-template-columns:repeat(4,60px);gap:8px}
+.mem-cell{background:linear-gradient(150deg,#fff,var(--clay-base));border-radius:14px;width:60px;height:60px;display:flex;align-items:center;justify-content:center;font-size:1.6rem;cursor:pointer;box-shadow:5px 5px 12px var(--clay-lo), -4px -4px 10px var(--clay-hi);transition:transform .15s}
+.mem-cell.flipped,.mem-cell.matched{background:linear-gradient(150deg,var(--accent-2),#fff)}
+.mem-cell.matched{opacity:.55;cursor:default}
+
+/* Whack a mole */
+.whack-grid{display:grid;grid-template-columns:repeat(3,72px);gap:10px}
+.whack-hole{width:72px;height:72px;border-radius:50%;background:radial-gradient(circle at 50% 40%,#e8a9c4,#c65a84);display:flex;align-items:center;justify-content:center;font-size:2rem;overflow:hidden;box-shadow:inset 4px 4px 10px rgba(0,0,0,.25)}
+.whack-hole span{transform:translateY(80%);transition:transform .12s}
+.whack-hole.up span{transform:translateY(0)}
+
+/* Simon says */
+.simon-grid{display:grid;grid-template-columns:repeat(2,90px);grid-template-rows:repeat(2,90px);gap:8px}
+.simon-pad{border-radius:20px;cursor:pointer;box-shadow:6px 6px 14px var(--clay-lo), -5px -5px 10px var(--clay-hi);transition:filter .1s}
+.simon-pad.active{filter:brightness(1.5)}
+#simon-0{background:#ff8fbf}#simon-1{background:#ffd36a}#simon-2{background:#a9d4ff}#simon-3{background:#a9e5d0}
+
+/* Spin wheel */
+.wheel-wrap{position:relative;width:240px;height:240px}
+.wheel-pointer{position:absolute;top:-6px;left:50%;transform:translateX(-50%);font-size:1.6rem;z-index:2}
+#wheelCanvas{border-radius:50%;box-shadow:8px 8px 20px var(--clay-lo), -6px -6px 16px var(--clay-hi)}
+
+/* generic */
+.big-emoji-btn{font-size:2rem;background:none;border:none;cursor:pointer}
+@media(max-width:420px){
+  .ttt-board{grid-template-columns:repeat(3,56px);grid-template-rows:repeat(3,56px)}
+  .mem-board{grid-template-columns:repeat(4,52px)}
+  .mem-cell{width:52px;height:52px}
+  .whack-grid{grid-template-columns:repeat(3,60px)}
+  .whack-hole{width:60px;height:60px}
+  .simon-grid{grid-template-columns:repeat(2,76px);grid-template-rows:repeat(2,76px)}
+}

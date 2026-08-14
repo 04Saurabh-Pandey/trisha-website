@@ -10,8 +10,10 @@
     .topbar{padding-top:1.2rem}
     .photobooth{display:flex;flex-direction:column;align-items:center;padding:1rem}
     .pb-wrap{max-width:460px;width:100%}
-    .camera-wrap{position:relative;display:block;width:100%;border-radius:24px;overflow:hidden;box-shadow:0 16px 40px rgba(132,51,78,0.16);background:#fff;aspect-ratio:4/3}
-    video, canvas{width:100%;height:100%;object-fit:cover;display:block;border-radius:24px}
+    .camera-wrap{position:relative;display:block;width:100%;border-radius:28px;overflow:hidden;background:#fff;aspect-ratio:4/3;
+      box-shadow:16px 16px 34px rgba(198,90,132,0.28), -12px -12px 24px rgba(255,255,255,0.9)}
+    video, canvas{width:100%;height:100%;object-fit:cover;display:block;border-radius:28px;background:#111}
+    @media (max-width:560px){ .camera-wrap{aspect-ratio:3/4} }
     .controls{margin-top:12px;display:flex;gap:8px;flex-wrap:wrap;justify-content:center}
     .frames{display:flex;gap:8px;margin-top:12px;flex-wrap:wrap;justify-content:center}
     .frame{width:80px;height:60px;border:2px dashed rgba(255,255,255,0.3);border-radius:12px;display:flex;align-items:center;justify-content:center;cursor:pointer;background:rgba(255,255,255,0.6)}
@@ -21,6 +23,14 @@
   </style>
 </head>
 <body>
+  <nav class="floaty-nav">
+    <a href="home.html" class="nav-pill">🏠 Home</a>
+    <a href="birthday.html" class="nav-pill">🎂 Birthday</a>
+    <a href="rakhi.html" class="nav-pill">🎀 Rakhi</a>
+    <a href="photobooth.html" class="nav-pill active">📸 Booth</a>
+    <a href="games.html" class="nav-pill">🎮 Games</a>
+    <a href="pet.html" class="nav-pill">🧸 Pet</a>
+  </nav>
   <header class="topbar"><h1>Photo Booth 📸</h1><p class="subtitle">A dreamy studio for cute selfies, sparkling filters, and playful stickers</p></header>
   <main class="photobooth center-page">
     <div class="pb-wrap">
@@ -34,9 +44,11 @@
 
       <div class="controls">
         <button id="start" class="btn">Open Camera</button>
+        <button id="flip" class="btn">🔄 Flip</button>
         <button id="count" class="btn">3s Countdown</button>
         <button id="take" class="btn primary">Take Photo</button>
         <button id="download" class="btn">Download</button>
+        <button id="retake" class="btn">Retake</button>
       </div>
 
       <div class="frames" id="frames"></div>
@@ -47,6 +59,10 @@
         <button data-filter="dreamy" class="btn small filter-btn">Dreamy</button>
         <button data-filter="cool" class="btn small filter-btn">Cool</button>
         <button data-filter="sunset" class="btn small filter-btn">Sunset</button>
+        <button data-filter="cartoon" class="btn small filter-btn">🎨 Cartoon</button>
+        <button data-filter="sketch" class="btn small filter-btn">✏️ Sketch</button>
+        <button data-filter="popart" class="btn small filter-btn">🌈 Pop Art</button>
+        <button data-filter="bw" class="btn small filter-btn">🎞️ B&amp;W</button>
       </div>
     </div>
   </main>

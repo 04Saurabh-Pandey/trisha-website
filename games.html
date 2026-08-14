@@ -1,0 +1,44 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Mini Games — Trishu</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="games.css">
+</head>
+<body class="games-page">
+  <div class="games-bg" aria-hidden="true"></div>
+
+  <nav class="floaty-nav">
+    <a href="home.html" class="nav-pill">🏠 Home</a>
+    <a href="birthday.html" class="nav-pill">🎂 Birthday</a>
+    <a href="rakhi.html" class="nav-pill">🎀 Rakhi</a>
+    <a href="photobooth.html" class="nav-pill">📸 Booth</a>
+    <a href="games.html" class="nav-pill active">🎮 Games</a>
+    <a href="pet.html" class="nav-pill">🧸 Pet</a>
+  </nav>
+
+  <header class="hero">
+    <div class="hero-bubble">🎮</div>
+    <h1>Mini Game Zone</h1>
+    <p class="hero-sub">11 cute little games, made just for you to enjoy on your special day 💖</p>
+  </header>
+
+  <main class="games-grid" id="games-grid"></main>
+
+  <div id="game-modal" class="game-modal hidden">
+    <div class="game-modal-card cg-surface">
+      <div class="game-modal-head">
+        <h2 id="game-title">Game</h2>
+        <button id="game-close" class="clay-btn">✕ Close</button>
+      </div>
+      <div id="game-body" class="game-body"></div>
+    </div>
+  </div>
+
+  <script src="config.js"></script>
+  <script src="games.js"></script>
+  <script src="script.js"></script>
+</body>
+</html>

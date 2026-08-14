@@ -1,6 +1,6 @@
 // config.js — editable config for the site
 window.config = {
-  PIN: 10,
+  PIN: 28,
   NAME: 'Trishu',
   // set to 28th August (use YYYY-MM-DD). Update year as needed.
   BIRTHDAY: '2026-08-28',
