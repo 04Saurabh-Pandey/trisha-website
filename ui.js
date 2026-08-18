@@ -4,6 +4,10 @@
 
   const reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 
+  document.addEventListener('visibilitychange', () => {
+    document.documentElement.classList.toggle('animations-paused', document.hidden);
+  });
+
   document.addEventListener('DOMContentLoaded', () => {
     document.documentElement.classList.add('ui-ready');
     makeNavigationUsable();

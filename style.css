@@ -1,23 +1,23 @@
 @import url('https://fonts.googleapis.com/css2?family=Baloo+2:wght@500;600;700;800&family=Nunito:wght@400;600;700;800&display=swap');
 
 :root{
-  --pink-1:#ffd6e8;
-  --pink-2:#ffb6d5;
-  --glass-bg: rgba(255,255,255,0.24);
-  --glass-border: rgba(255,255,255,0.45);
-  --accent: #ff69b4;
-  --accent-2:#ff95c8;
-  --soft:#fff7fc;
-  --ink:#5b2b41;
+  --pink-1:#e8f8ff;
+  --pink-2:#dcd6ff;
+  --glass-bg:rgba(255,255,255,.72);
+  --glass-border:rgba(255,255,255,.78);
+  --accent:#7a68eb;
+  --accent-2:#9c8cff;
+  --soft:#f8fbff;
+  --ink:#31456d;
 
   /* Clay + Glass hybrid tokens */
-  --clay-base:#ffe4ef;
+  --clay-base:#eef0ff;
   --clay-hi: rgba(255,255,255,0.95);
-  --clay-lo: rgba(198,90,132,0.35);
-  --clay-lo-strong: rgba(168,63,105,0.45);
-  --clay-gold:#ffc857;
-  --clay-mint:#a9e5d0;
-  --clay-sky:#a9d4ff;
+  --clay-lo:rgba(83,111,180,.18);
+  --clay-lo-strong:rgba(83,111,180,.3);
+  --clay-gold:#ffc95f;
+  --clay-mint:#83e2c1;
+  --clay-sky:#8edcff;
   --font-display:'Baloo 2', 'Segoe UI', sans-serif;
   --font-body:'Nunito', 'Segoe UI', Arial, sans-serif;
 }
@@ -68,8 +68,6 @@ h1,h2,h3,.welcome-anim{font-family:var(--font-display)}
 .chip-label{display:inline-flex;align-items:center;gap:.35rem;font-family:var(--font-display);font-weight:700;font-size:.8rem;padding:.35rem .75rem;border-radius:999px;background:linear-gradient(150deg,#fff,var(--clay-base));box-shadow:5px 5px 12px var(--clay-lo), -4px -4px 10px var(--clay-hi);color:#a33963}
 .lock-bg-layer{position:absolute;inset:-2%;z-index:-2;background:url('bgbig.jpg') center/cover no-repeat;opacity:0.95;pointer-events:none}
 .lock-bg-layer::before{content:'';position:absolute;inset:0;background:linear-gradient(135deg, rgba(255,255,255,0.2), rgba(255,255,255,0.05));pointer-events:none}
-.lock-poster-wrap{margin-top:.9rem;border-radius:18px;overflow:hidden;padding:.35rem;background:rgba(255,255,255,0.78);box-shadow:0 10px 24px rgba(255,105,180,0.14)}
-.lock-poster-img{display:block;width:100%;max-height:220px;object-fit:contain;border-radius:14px;animation:singleRotate 6s ease-in-out 1;transform-origin:center}
 .card{padding:1rem;text-align:center;box-shadow:0 18px 45px rgba(107,49,76,0.16), inset 0 1px 0 rgba(255,255,255,0.7);border-radius:26px}
 .lock-card{
   width:min(420px,94vw);padding:clamp(1.1rem,3.5vw,1.8rem);position:relative;overflow:hidden;
@@ -238,3 +236,59 @@ img{max-width:100%}
   .camera-wrap{max-width:100%}
   .controls .btn{padding:.6rem 1rem;font-size:1rem}
 }
+
+/* ===== Candy Cloud Adventure theme ===== */
+body,.birthday-page,.rakhi-page,.games-page{
+  background:linear-gradient(160deg,#7ed7ff 0%,#b8e9ff 32%,#ded7ff 70%,#fff0a7 120%)!important;
+  color:var(--ink);
+}
+body::before{content:'';position:fixed;inset:0;z-index:-3;pointer-events:none;opacity:.52;background-image:radial-gradient(circle at 13% 18%,#fff 0 2px,transparent 3px),radial-gradient(circle at 84% 33%,#fff 0 3px,transparent 4px),radial-gradient(circle at 38% 78%,#fff 0 2px,transparent 3px);background-size:94px 94px,130px 130px,78px 78px}
+body::after{content:'';position:fixed;z-index:-2;width:260px;height:90px;right:-60px;bottom:7vh;border-radius:100% 100% 0 0;background:rgba(255,255,255,.35);filter:blur(1px);pointer-events:none}
+.home-bg-layer,.lock-bg-layer,.birthday-poster,.games-bg{display:none}
+.glass,.cg-surface{background:rgba(255,255,255,.82);border:3px solid rgba(255,255,255,.8);box-shadow:0 12px 0 rgba(62,93,159,.1),0 20px 32px rgba(51,78,133,.16),inset 0 2px 0 #fff;backdrop-filter:none}
+.card,.big-card,.game-card{border:3px solid rgba(255,255,255,.9);box-shadow:0 10px 0 rgba(62,93,159,.1),0 18px 30px rgba(51,78,133,.14)}
+.big-card{background:linear-gradient(145deg,#fff 0%,#f5f4ff 100%)}
+.big-card:nth-child(3n+1){background:linear-gradient(145deg,#fff9c9,#fff 78%)}
+.big-card:nth-child(3n+2){background:linear-gradient(145deg,#e8fbff,#fff 78%)}
+.big-card:nth-child(3n){background:linear-gradient(145deg,#f3ebff,#fff 78%)}
+.big-card:hover,.game-card:hover{transform:translateY(-8px) rotate(-1deg);box-shadow:0 15px 0 rgba(62,93,159,.12),0 24px 34px rgba(51,78,133,.19)}
+.card-art{filter:drop-shadow(0 8px 8px rgba(85,119,186,.16));box-shadow:none}
+.game-art{background:#fff3a6;box-shadow:inset 0 -7px 0 rgba(255,194,70,.25)}
+.topbar,.hero{position:relative;text-align:center}.home-page .topbar{padding-top:clamp(4rem,11vh,7rem)}
+.hero-bubble{background:linear-gradient(135deg,#fff 5%,#ffe779 100%);box-shadow:0 8px 0 #e3b93d,0 16px 26px rgba(70,92,151,.2);animation:bounceBubble 3s ease-in-out infinite}
+.welcome-anim,.hero h1,.rakhi-hero h1{font-family:var(--font-display);color:#364d7b!important;text-shadow:0 3px 0 #fff,0 7px 14px rgba(60,85,150,.16);letter-spacing:.01em}
+.subtitle,.hero-sub,.card-copy p,.mini-section p,.watch-header p{color:#53688f!important}
+.section-heading span,.chip-label{background:#fff3a6;color:#69541e;box-shadow:none}
+.section-heading h2,.card-copy h3,.mini-section h3,.watch-header h3{color:#364d7b!important}
+.floaty-nav{background:rgba(255,255,255,.72);border-bottom:2px solid rgba(255,255,255,.8);box-shadow:0 5px 18px rgba(63,91,150,.1)}
+.nav-pill{background:#fff;color:#40567f;box-shadow:0 4px 0 rgba(74,105,169,.16);border:1px solid rgba(91,130,200,.09)}
+.nav-pill.active{background:linear-gradient(135deg,#7867e9,#9f8eff);box-shadow:0 4px 0 #594ab7;color:#fff}
+.btn,.clay-btn,.upload-btn{border:0!important;background:linear-gradient(135deg,#fff 0%,#eef4ff 100%);color:#3d547e;box-shadow:0 5px 0 rgba(67,98,160,.18),0 10px 16px rgba(67,98,160,.13)}
+.btn.primary,.clay-btn.accent{background:linear-gradient(135deg,#ffca57,#ff9d59);box-shadow:0 5px 0 #db7b3a,0 11px 17px rgba(172,95,46,.2);color:#fff}
+.btn:hover,.clay-btn:hover,.upload-btn:hover{transform:translateY(-3px)}
+.mini-section,.watch-card,.poster-card,.wish-card,.photo-card,.rakhi-banner,.hero-banner{border-radius:30px}
+.poster-frame{background:#edf6ff}
+.wish-card h2,.photo-card h2,.rakhi-note h2,.home-poster-card h3{color:#364d7b!important}
+.wish-card p,.photo-card p,.rakhi-note p{color:#53688f!important}
+.gallery img{border:4px solid #fff;box-shadow:0 7px 0 rgba(69,102,165,.13),0 14px 20px rgba(69,102,165,.12)}
+.gallery .empty-state,.watch-preview{background:#f6faff;color:#61789e;border-color:#b7d8ff}
+.stat,.pet-talk{background:#f8fbff!important;color:#4e648c!important;border:2px solid #fff;box-shadow:0 5px 14px rgba(69,102,165,.12)}
+.pet-img{background:linear-gradient(180deg,#fff4af,#e5f8ff)!important;box-shadow:0 8px 0 rgba(69,102,165,.13),0 17px 24px rgba(69,102,165,.16)!important}
+.status-pill{background:#fff5bf!important;color:#705c27!important}
+
+/* The refreshed secret-club lockscreen */
+#lock-screen{background:radial-gradient(circle at 20% 20%,#fff8bc 0 2%,transparent 18%),linear-gradient(150deg,#70d0ff,#b8e9ff 50%,#d9d1ff)}
+.lock-card{width:min(440px,94vw);padding:0 1.25rem 1.4rem!important;background:rgba(255,255,255,.91);border:4px solid #fff;border-radius:38px;box-shadow:0 12px 0 rgba(54,90,157,.16),0 28px 45px rgba(39,79,143,.22);overflow:visible}
+.lock-card::before{display:none}.lock-badge{display:none}.lock-sky{height:150px;margin:0 -1.25rem .3rem;position:relative;overflow:hidden;border-radius:34px 34px 42% 42%;background:linear-gradient(180deg,#71d5ff,#c9f0ff);border-bottom:3px solid #fff}
+.cloud{position:absolute;width:100px;height:30px;background:#fff;border-radius:999px;opacity:.8}.cloud::before,.cloud::after{content:'';position:absolute;background:#fff;border-radius:50%}.cloud::before{width:42px;height:42px;left:18px;bottom:10px}.cloud::after{width:56px;height:56px;left:42px;bottom:4px}.cloud-one{top:28px;left:-30px;animation:cloudDrift 10s linear infinite}.cloud-two{top:68px;right:-25px;transform:scale(.65);animation:cloudDrift 12s linear infinite reverse}.star{position:absolute;color:#fff3a1;font-size:24px;animation:twinkle 1.7s ease-in-out infinite}.star-one{left:19%;top:27px}.star-two{right:20%;top:42px;animation-delay:.6s}
+.lock-mascot{position:absolute;width:100px;height:82px;left:50%;bottom:8px;transform:translateX(-50%);border-radius:47% 47% 42% 42%;background:#a083ef;box-shadow:inset 0 -10px 0 #8068d5,0 7px 0 rgba(55,89,151,.16);animation:mascotHop 2.4s ease-in-out infinite}.ear{position:absolute;width:29px;height:34px;top:-13px;background:#a083ef;border-radius:80% 20% 50% 30%;z-index:-1}.ear-left{left:8px;transform:rotate(-25deg)}.ear-right{right:8px;transform:scaleX(-1) rotate(-25deg)}.mascot-eye{position:absolute;width:8px;height:12px;top:34px;background:#35466c;border-radius:50%}.eye-left{left:31px}.eye-right{right:31px}.mascot-smile{position:absolute;width:20px;height:10px;left:40px;top:50px;border-bottom:3px solid #35466c;border-radius:0 0 50% 50%}
+.lock-content{position:relative;z-index:1}.lock-content h1{color:#364d7b;font-size:2rem;margin:.1rem 0}.lock-content .sub{color:#62769b;margin:.2rem auto .8rem;max-width:290px}.lock-kicker{display:inline-block;background:#fff0a0;color:#755b21;border-radius:999px;padding:.25rem .7rem;font-size:.7rem;font-weight:800;letter-spacing:.08em}.pin-display{background:#f0f5ff;color:#516a9b;box-shadow:inset 0 3px 9px rgba(70,104,170,.16)}.key{background:#fff;border:2px solid #e1ebff;color:#455d89;box-shadow:0 5px 0 #c9d9f5,0 8px 12px rgba(60,93,150,.1)}.key:nth-child(3n+1){background:#fff5c4}.key:nth-child(3n+2){background:#e6f8ff}.key:nth-child(3n){background:#f0ebff}.pin-msg{color:#62769b}.countdown-badge{background:#fff1a8}
+
+.bg-anim span{background:#fff4a6;box-shadow:0 0 12px rgba(255,241,139,.8);border-radius:50%;animation-duration:10s}
+.animations-paused *,.animations-paused *::before,.animations-paused *::after{animation-play-state:paused!important}
+@keyframes bounceBubble{0%,100%{transform:translateY(0) rotate(-3deg)}50%{transform:translateY(-7px) rotate(3deg)}}
+@keyframes mascotHop{0%,100%{transform:translateX(-50%) translateY(0)}50%{transform:translateX(-50%) translateY(-8px)}}
+@keyframes cloudDrift{0%{translate:0 0}50%{translate:26px 0}100%{translate:0 0}}
+@keyframes twinkle{0%,100%{opacity:.5;transform:scale(.7)}50%{opacity:1;transform:scale(1.15)}}
+
+@media(max-width:720px){.lock-sky{height:132px}.lock-card{padding-left:1rem!important;padding-right:1rem!important}.lock-sky{margin-left:-1rem;margin-right:-1rem}.cards{gap:1.15rem}.big-card{min-height:205px}.hero h1,.welcome-anim{font-size:clamp(1.7rem,8vw,2.3rem)}}

@@ -15,17 +15,17 @@
 .game-card:hover{transform:translateY(-6px)}
 .game-card:active{transform:translateY(1px) scale(.97);box-shadow:inset 6px 6px 14px var(--clay-lo), inset -6px -6px 12px var(--clay-hi)}
 .game-card .icon{font-size:2.4rem}
-.game-card h3{margin:0;font-family:var(--font-display);font-size:1rem;color:#7a2f4f}
-.game-card p{margin:0;font-size:.82rem;color:#8b5670;line-height:1.35}
+.game-card h3{margin:0;font-family:var(--font-display);font-size:1rem;color:#364d7b}
+.game-card p{margin:0;font-size:.82rem;color:#53688f;line-height:1.35}
 
 .game-modal{position:fixed;inset:0;z-index:100;display:flex;align-items:center;justify-content:center;padding:1rem;background:rgba(122,47,79,0.35);backdrop-filter:blur(6px)}
 .game-modal.hidden{display:none}
 .game-modal-card{width:min(560px,96vw);max-height:92vh;overflow:auto;padding:1.2rem}
 .game-modal-head{display:flex;align-items:center;justify-content:space-between;gap:1rem;margin-bottom:.7rem}
-.game-modal-head h2{margin:0;font-size:1.15rem;color:#7a2f4f}
+.game-modal-head h2{margin:0;font-size:1.15rem;color:#364d7b}
 .game-body{display:flex;flex-direction:column;align-items:center;gap:.8rem}
 .game-body canvas{max-width:100%;border-radius:18px;background:#fff0f6;box-shadow:inset 0 0 0 2px rgba(255,105,180,0.18);touch-action:none}
-.game-status{font-family:var(--font-display);font-weight:700;color:#a33963;text-align:center}
+.game-status{font-family:var(--font-display);font-weight:700;color:#596fc0;text-align:center}
 .game-controls{display:flex;gap:.5rem;flex-wrap:wrap;justify-content:center}
 
 /* Tic Tac Toe */

@@ -12,6 +12,7 @@
     },900);
   });
 
+
   function initKeypad(){
     const keypad = document.getElementById('keypad');
     const display = document.getElementById('pin-display');
