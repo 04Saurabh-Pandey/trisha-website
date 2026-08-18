@@ -114,7 +114,7 @@ h1,h2,h3,.welcome-anim{font-family:var(--font-display)}
 .lock-card.unlocked{transform:scale(1.02);box-shadow:0 32px 80px rgba(255,105,180,0.15),0 14px 38px rgba(0,0,0,0.12);border-color:rgba(255,255,255,0.65)}
 .loading-screen{position:fixed;inset:0;display:flex;align-items:center;justify-content:center;background:linear-gradient(180deg,rgba(255,240,245,0.95),rgba(255,245,250,0.6));z-index:9999}
 .loader-card{width:min(360px,92vw);text-align:center;padding:clamp(1rem,3vw,1.5rem);border-radius:24px;background:rgba(255,255,255,0.72);box-shadow:0 20px 45px rgba(122,53,80,0.16);backdrop-filter:blur(14px)}
-.loader-gif{width:120px;height:120px;filter:drop-shadow(0 10px 24px rgba(255,105,180,0.18))}
+.loader-gif{width:110px;height:110px;object-fit:contain;filter:drop-shadow(0 10px 20px rgba(255,105,180,.15))}
 .progress{height:8px;background:rgba(255,255,255,0.4);border-radius:999px;margin:1rem 0;overflow:hidden}
 .progress span{display:block;height:100%;width:0;background:linear-gradient(90deg,var(--accent),var(--accent-2));animation:load 3s linear forwards}
 @keyframes load{to{width:100%}}

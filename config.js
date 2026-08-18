@@ -3,7 +3,7 @@ window.config = {
   PIN: 28,
   NAME: 'Trishu',
   // set to 28th August (use YYYY-MM-DD). Update year as needed.
-  BIRTHDAY: '2026-08-28',
+  BIRTHDAY: '2026-08-18',
   SONGS: [
     // add filenames in assets/music/
     'happy-bday.mp3'

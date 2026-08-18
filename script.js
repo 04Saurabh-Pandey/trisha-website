@@ -24,7 +24,7 @@
     keypad.innerHTML='';
     let entered = '';
     const pinStr = String(config && config.PIN ? config.PIN : '28');
-    const targetDate = parseBirthday(config && config.BIRTHDAY ? config.BIRTHDAY : '2026-08-28');
+    const targetDate = parseBirthday(config && config.BIRTHDAY ? config.BIRTHDAY : '2026-08-18');
     const birthdayReached = isBirthdayReached(targetDate);
 
     digits.forEach(d=>{
@@ -121,7 +121,10 @@
 
   function initBgHearts(){
     const bg = document.querySelector('.bg-anim'); if(!bg) return;
-    for(let i=0;i<20;i++){ const s=document.createElement('span'); s.style.left=Math.random()*100+'%'; s.style.bottom=(Math.random()*80-20)+'vh'; s.style.animationDelay=(Math.random()*6)+'s'; s.style.width=(6+Math.random()*22)+'px'; s.style.height=s.style.width; bg.appendChild(s); }
+    if(window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+    // Keep decorative animation gentle on small / lower-memory devices.
+    const count = (navigator.deviceMemory && navigator.deviceMemory <= 4) || window.innerWidth < 640 ? 8 : 14;
+    for(let i=0;i<count;i++){ const s=document.createElement('span'); s.style.left=Math.random()*100+'%'; s.style.bottom=(Math.random()*80-20)+'vh'; s.style.animationDelay=(Math.random()*6)+'s'; s.style.width=(6+Math.random()*18)+'px'; s.style.height=s.style.width; bg.appendChild(s); }
   }
 
   function initAI(){
@@ -202,7 +205,7 @@
   }
 
   // small config fallback
-  window.config = window.config || {PIN:10};
+  window.config = window.config || {PIN:28};
 
   // Graceful fallback for optional images that may not exist yet (assets/*)
   // so the site never shows a broken-image icon — swaps in a soft emoji tile instead.
